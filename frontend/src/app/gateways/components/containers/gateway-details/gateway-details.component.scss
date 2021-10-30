@@ -1,0 +1,22 @@
+@import "../../../../../styles.scss";
+
+.gateway-details-contaienr {
+  padding: 1rem;
+  &__title {
+    color: $primaryText;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  ul {
+    list-style-type: none;
+    padding: 1rem;
+  }
+  &__gateway-card {
+    &__devices-list {
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

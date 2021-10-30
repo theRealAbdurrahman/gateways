@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Device</h1>
+<div mat-dialog-content class="dialog-container">
+  <form
+    [formGroup]="deviceForm"
+    (ngSubmit)="onSubmit()"
+    class="dialog-container__form"
+  >
+    <mat-form-field>
+      <mat-label>Vendor:</mat-label>
+      <input matInput formControlName="vendor" type="text" required />
+    </mat-form-field>
+    <mat-slide-toggle formControlName="status" color="primary">Online</mat-slide-toggle>
+
+    <mat-form-field>
+      <mat-label>UID:</mat-label>
+      <input matInput formControlName="uid" type="text" required />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!deviceForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

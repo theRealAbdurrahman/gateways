@@ -1,0 +1,20 @@
+@import "../../../../../styles.scss";
+
+.gateways-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  &__title {
+    text-align: center;
+    color: $primaryText;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &__gateways-table {
+    width: 90vw;
+    margin: 1rem auto;
+  }
+  &__add-gateway-btn {
+    align-self: flex-end;
+  }
+}

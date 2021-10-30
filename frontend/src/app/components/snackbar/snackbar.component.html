@@ -1,0 +1,8 @@
+<div class="flex justify-between items-center">
+    <!-- Left Side -->
+    <div class="flex items-center">
+        <mat-icon class="success" *ngIf="success()">done</mat-icon>
+        <mat-icon class="error" *ngIf="!success()">error</mat-icon>
+        <span class="mx-2 text-black">{{data.message}}</span>
+    </div>
+</div>

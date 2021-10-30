@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    environment:
+      MONGO_INITDB_DATABASE: musala
+    ports:
+    - 27017:27017
+  nodejs-api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: nodejs-api
+    links:
+      - mongo
+  ui-build:
+    build:
+      context: ./
+      dockerfile: Dockerfile-ui
+    ports:
+      - 4200:4200
+    container_name: ui-build
+    links:
+      - nodejs-api   

@@ -1,0 +1,47 @@
+<section class="gateway-details-contaienr">
+  <h1 class="gateway-details-contaienr__title">Gateway details:</h1>
+  <mat-card class="gateway-details-contaienr__gateway-card">
+    <mat-card-header>
+      <mat-card-title>{{ gateway.name }}</mat-card-title>
+      <mat-card-subtitle>{{ gateway.serial }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <ul>
+        <li>Name: {{ gateway.name }}</li>
+        <li>serial: {{ gateway.serial }}</li>
+        <li>ip: {{ gateway.ip }}</li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Devices </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul class="gateway-details-contaienr__gateway-card__devices-list">
+              <li *ngFor="let device of gateway.devices">
+                <ul>
+                  <li>Vendor: {{ device.vendor }}</li>
+                  <li>status: {{ device.status }}</li>
+                  <li>UID: {{ device.uid }}</li>
+                </ul>
+                <button
+                  mat-icon-button
+                  color="warn"
+                  aria-label="delete device from current gateway"
+                  (click)="deleteDevice(device)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </li>
+            </ul>
+            <button mat-raised-button color="primary" (click)="addDevice()">
+              Add device
+            </button>
+          </mat-expansion-panel>
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="back()">BACK</button>
+      <button mat-button color="warn" (click)="deleteGateway()">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</section>

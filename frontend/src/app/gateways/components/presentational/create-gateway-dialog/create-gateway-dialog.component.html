@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Create Gateway</h1>
+<div mat-dialog-content class="dialog-container">
+  <form [formGroup]="gatewayForm" (ngSubmit)="onSubmit()" class="dialog-container__form">
+    <mat-form-field>
+      <mat-label>Name:</mat-label>
+      <input matInput formControlName="name" type="text" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>serial:</mat-label>
+      <input matInput formControlName="serial" type="text" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>ip:</mat-label>
+      <input matInput formControlName="ip" type="text" required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
